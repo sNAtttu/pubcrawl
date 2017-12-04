@@ -1,8 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  BrowserRouter,
+  Route,
+  Switch,
+} from 'react-router-dom';
 import './index.css';
-import App from './App';
+import FrontPage from './pages/FrontPage';
+import SignUp from './pages/SignUp';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(  
+<BrowserRouter>
+  <Switch>
+    <Route exact path='/' component={FrontPage} />
+    <Route exact path='/signuppade' component={SignUp} />
+  </Switch>
+</BrowserRouter>, document.getElementById('root'));
 registerServiceWorker();

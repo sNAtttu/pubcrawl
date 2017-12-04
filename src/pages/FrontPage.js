@@ -4,6 +4,7 @@ import { Container } from '../components/Container';
 import { FlyingBanner } from '../components/Banner';
 import CountdownTimer from '../modules/CountdownTimer';
 import { Program, FinlandBanner, BannerText } from '../components/Program';
+import { ButtonContainer, LinkButton } from '../components/Button';
 
 import programImg from '../resources/ohjelma.png';
 class FrontPage extends Component {
@@ -21,9 +22,12 @@ class FrontPage extends Component {
         <CountdownTimer />
         <Program>
           <a href="http://maps.google.com/?q=Kallio,Helsinki">
-            <img src={programImg}/>
+            <img src={programImg} alt="Ohjelman lataus epäonnistui"/>
           </a>
         </Program>
+        <ButtonContainer>
+          <LinkButton to='/signuppade'>ILMOITTAUDU!</LinkButton>
+        </ButtonContainer>
       </Container>
     );
   }
