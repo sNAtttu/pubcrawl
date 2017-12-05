@@ -24,7 +24,7 @@ namespace PubCrawlAPI.Controllers
             if(participant != null)
             {
                 Random rng = new Random();
-                var teamsWithRoom = _context.Teams.Where(t => t.Participants.Count < 6).ToList();
+                var teamsWithRoom = _context.Teams.Where(t => t.Participants.Count < 5).ToList();
                 var participantsTeam = teamsWithRoom[rng.Next(teamsWithRoom.Count)];
                 participant.Team = participantsTeam;
                 _context.Add(participant);
