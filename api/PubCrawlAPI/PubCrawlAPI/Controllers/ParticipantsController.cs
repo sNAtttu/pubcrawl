@@ -40,5 +40,23 @@ namespace PubCrawlAPI.Controllers
                 return new JsonResult("No participant");
             }
         }
+        // api/participants/?id=1
+        [HttpDelete]
+        public void Delete(int id)
+        {
+            var participant = _context.Participants.FirstOrDefault(p => p.Id == id);
+            if(participant != null)
+            {
+                _context.Participants.Remove(participant);
+                _context.SaveChanges();
+            }
+        }
+        
+        [HttpGet]
+        public JsonResult Get()
+        {
+            var participants = _context.Participants.ToList();
+            return new JsonResult(participants);
+        }
     }
 }

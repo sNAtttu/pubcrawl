@@ -11,9 +11,10 @@ using System;
 namespace PubCrawlAPI.Migrations
 {
     [DbContext(typeof(PubCrawlDbContext))]
-    partial class PubCrawlDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171213183608_Checkin")]
+    partial class Checkin
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

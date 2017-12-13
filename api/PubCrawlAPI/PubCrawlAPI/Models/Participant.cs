@@ -11,6 +11,7 @@ namespace PubCrawlAPI.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public int TeamId { get; set; }
+        public List<CheckIn> CheckIns { get; set; }
         [JsonIgnore]
         public Team Team { get; set; }
     }
