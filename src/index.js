@@ -14,7 +14,7 @@ ReactDOM.render(
 <BrowserRouter>
   <Switch>
     <Route exact path='/' component={FrontPage} />
-    <Route exact path='/signuppade' component={SignUp} />
+    <Route exact path='/signup' component={SignUp} />
   </Switch>
 </BrowserRouter>, document.getElementById('root'));
 registerServiceWorker();

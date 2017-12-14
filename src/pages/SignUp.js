@@ -14,7 +14,7 @@ class SignUp extends Component {
   }
   componentWillMount = () => {
     var self = this;
-    fetch('http://pubcrawlfinlandapi.azurewebsites.net/api/teams').then(function (response) {
+    fetch('http://localhost:51631/api/teams').then(function (response) {
       return response.json();
     }).then(function (data) {
       self.setState({ teams: data });
@@ -25,7 +25,7 @@ class SignUp extends Component {
     e.preventDefault();
     const data = new FormData(e.target);
     const newParticipant = { Name: data.get("participant") };
-    fetch("http://pubcrawlfinlandapi.azurewebsites.net/api/participants",
+    fetch("http://localhost:51631/api/participants",
       {
         method: "POST",
         body: JSON.stringify(newParticipant),
